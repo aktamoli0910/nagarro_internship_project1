@@ -21,7 +21,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 const Chat = require('./models/chat');
 
-mongoose.connect('mongodb://localhost:27017/twitter_clone')
+mongoose.connect(process.env.MONGOURL)
     .then(() => {
         console.log("db connected");
     }).catch((err) => {
