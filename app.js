@@ -13,7 +13,7 @@ const isLoggedIn = require('./middleware');
 const flash = require('connect-flash');
 const socketio = require('socket.io');
 const http = require('http');
-
+require ("dotenv").config();
 const app = express();
 
 // chatting app
@@ -78,6 +78,6 @@ io.on('connection',(socket) => {
 
 
 
-server.listen(3000, () => {
+server.listen(process.env.PORT, () => {
     console.log('welcome to twitter clone');
 });
